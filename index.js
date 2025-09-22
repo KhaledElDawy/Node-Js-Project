@@ -120,13 +120,26 @@ app.delete("/articles/:articleId",async(req,res) => {
 });
 
 
-app.get("/showArticles" , async(req,res) => {
-    const articles = await Article.find();
-    res.render("articles.ejs" , {
-        allArticles:articles,
-    });
+// app.get("/showArticles" , async(req,res) => {
+//     const articles = await Article.find();
+//     res.render("articles.ejs" , {
+//         allArticles:articles,
+//     });
 
+// });
+
+app.get("/showArticles", async (req, res) => {
+  try {
+    const articles = await Article.find();
+    res.render("articles", {
+      allArticles: articles,
+    });
+  } catch (err) {
+    console.error("Error fetching articles:", err);
+    res.status(500).send("Internal Server Error");
+  }
 });
+
 
 app.listen(3000,() => {
     console.log("i am listening in port 3000");

@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Articles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .articles-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-card {
+      background-color: #fff8e1;
+      border: 1px solid #ffcc80;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #e65100;
+    }
+
+    .article-content {
+      color: #444;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
-    <h1>All Articles Page Is here</h1>
-    <hr />
 
-    <div style="background: orange; color: black; padding: 20px;">
+  <h1>📰 All Articles</h1>
+  <hr />
 
-        <%= allArticles %>
-
-    </div>
-</body>
-</html>
+  <div class="articles-container">
+    <% allArticles.forEach(function(article) { %>
+      <div class="article-card">
+        <div class="article-title"><%= article.title %>
