@@ -43,6 +43,12 @@
     .article-content {
       color: #444;
       line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .article-likes {
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
@@ -54,4 +60,12 @@
   <div class="articles-container">
     <% allArticles.forEach(function(article) { %>
       <div class="article-card">
-        <div class="article-title"><%= article.title %>
+        <div class="article-title"><%= article.title %></div>
+        <div class="article-content"><%= article.body %></div>
+        <div class="article-likes">❤️ Likes: <%= article.numberOfLikes %></div>
+      </div>
+    <% }); %>
+  </div>
+
+</body>
+</html>
