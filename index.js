@@ -14,6 +14,8 @@ mongoose.connect("mongodb+srv://khaledeldos74:Kh%40led1861996010@myfirstnodejscl
 
 
 app.use(express.json());
+app.set('view engine', 'ejs');
+
 
 
 app.get("/hello" , (req , res) => {
