@@ -122,15 +122,7 @@ app.delete("/articles/:articleId",async(req,res) => {
 });
 
 
-// app.get("/showArticles" , async(req,res) => {
-//     const articles = await Article.find();
-//     res.render("articles.ejs" , {
-//         allArticles:articles,
-//     });
-
-// });
-
-app.get("/showArticles", async (req, res) => {
+app.get("/showarticles", async (req, res) => {  // هنا خلي الرابط صغير بالكامل
   try {
     const articles = await Article.find();
     res.render("articles", {
@@ -141,6 +133,7 @@ app.get("/showArticles", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
 
 
 app.listen(3000,() => {
